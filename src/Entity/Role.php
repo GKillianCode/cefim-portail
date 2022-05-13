@@ -22,7 +22,7 @@ class Role
     /**
      * @ORM\Column(type="string", length=255)
      * @Assert\NotBlank
-     * @Assert\Regex("/^[A_Z]/")
+     * @Assert\Length(min=3, max=255)
      */
     private $name;
 

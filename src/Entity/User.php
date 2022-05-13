@@ -21,6 +21,8 @@ class User
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank
+     * @Assert\Regex("/^[a-zA-Z]+-*$/")
      */
     private $firstName;
 
@@ -33,11 +35,18 @@ class User
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\Email
+     * @Assert\NotBlank
+     * @Assert\Length(min="5", max="255")
+     * @Assert\Regex("/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/")
      */
     private $email;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank
+     * @Assert\Length(min="8", max="255")
+     * @Assert\Regex("/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/")
      */
     private $password;
 

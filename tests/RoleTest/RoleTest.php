@@ -37,5 +37,4 @@ class RoleTest extends KernelTestCase
     }
 
 
-
 }
