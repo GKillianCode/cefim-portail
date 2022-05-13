@@ -12,8 +12,8 @@ class UserTest extends KernelTestCase
     public function getEntity(): User
     {
         return (new User())
-            ->setNom('Dupont')
-            ->setPrenom('Jean');
+            ->setFirstName('Dupont')
+            ->setLastName('Jean');
     }
 
     public function assertHasErrors(User $user, int $number = 0): void
@@ -33,7 +33,7 @@ class UserTest extends KernelTestCase
     public function TextInvalidUser()
     {
         $user = $this->getEntity()
-                ->setNom('Dupont4');
+                ->setFirstName('Dupont4');
         $this->assertHasErrors($user, 1);
     }
 
