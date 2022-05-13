@@ -29,3 +29,9 @@ yarn-error.log
 ###< phpunit/phpunit ###
 
 .idea/
+
+phpunit.xml.dist
+
+migrations/
+
+composer.lock
