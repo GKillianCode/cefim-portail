@@ -1,12 +1,15 @@
 <?php
 
+
 namespace App\Admin\Field;
 
+use App\Entity\Role;
 use EasyCorp\Bundle\EasyAdminBundle\Contracts\Field\FieldInterface;
 use EasyCorp\Bundle\EasyAdminBundle\Field\FieldTrait;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 
-final class PasswordField implements FieldInterface
+final class RoleField implements FieldInterface
 {
     use FieldTrait;
 
@@ -18,8 +21,8 @@ final class PasswordField implements FieldInterface
         return (new self())
             ->setProperty($propertyName)
             ->setLabel($label)
-            ->setFormType(PasswordType::class)
-            ->addCssClass('field-password col-3')
-            ;
+            ->setFormType(EntityType::class)
+            ->setFormTypeOptions(['class' => Role::class,'mapped' => false])
+            ->addCssClass('field-role col-3');
     }
 }
