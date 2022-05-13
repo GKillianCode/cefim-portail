@@ -27,7 +27,7 @@ class User
     private $firstName;
 
     /**
-     * @ORM\Column(type="string", length=180, unique=true)
+     * @ORM\Column(type="string", length=180)
      * @Assert\Regex("/^[a-zA-Z]+-*$/")
      * @Assert\NotBlank
      */

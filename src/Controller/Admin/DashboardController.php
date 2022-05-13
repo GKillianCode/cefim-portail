@@ -3,6 +3,7 @@
 namespace App\Controller\Admin;
 
 use App\Entity\Filiere;
+use App\Entity\Profile;
 use App\Entity\Promotion;
 use App\Entity\Role;
 use App\Entity\User;
@@ -42,6 +43,7 @@ class DashboardController extends AbstractDashboardController
             MenuItem::section('Users'),
             MenuItem::linkToCrud('User', 'fa fa-comment', User::class),
             MenuItem::linkToCrud('Role', 'fa fa-user', Role::class),
+            MenuItem::linkToCrud('Profil', 'fa fa-user', Profile::class),
         ];
 
     }
