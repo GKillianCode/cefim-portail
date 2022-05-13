@@ -8,6 +8,7 @@ use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
 class UserTest extends KernelTestCase
 {
 
+
     public function getEntity(): User
     {
         return (new User())

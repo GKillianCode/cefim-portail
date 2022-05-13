@@ -20,9 +20,7 @@ class User
     private $id;
 
     /**
-     * @ORM\Column(type="string", length=180, unique=true)
-     * @Assert\Regex("/^[a-zA-Z]+-*$/")
-     * @Assert\NotBlank
+     * @ORM\Column(type="string", length=255)
      */
     private $firstName;
 
