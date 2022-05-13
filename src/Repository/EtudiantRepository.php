@@ -2,26 +2,26 @@
 
 namespace App\Repository;
 
-use App\Entity\Evenement;
+use App\Entity\Etudiant;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
- * @extends ServiceEntityRepository<Evenement>
+ * @extends ServiceEntityRepository<Etudiant>
  *
- * @method Evenement|null find($id, $lockMode = null, $lockVersion = null)
- * @method Evenement|null findOneBy(array $criteria, array $orderBy = null)
- * @method Evenement[]    findAll()
- * @method Evenement[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+ * @method Etudiant|null find($id, $lockMode = null, $lockVersion = null)
+ * @method Etudiant|null findOneBy(array $criteria, array $orderBy = null)
+ * @method Etudiant[]    findAll()
+ * @method Etudiant[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class EvenementRepository extends ServiceEntityRepository
+class EtudiantRepository extends ServiceEntityRepository
 {
     public function __construct(ManagerRegistry $registry)
     {
-        parent::__construct($registry, Evenement::class);
+        parent::__construct($registry, Etudiant::class);
     }
 
-    public function add(Evenement $entity, bool $flush = false): void
+    public function add(Etudiant $entity, bool $flush = false): void
     {
         $this->getEntityManager()->persist($entity);
 
@@ -30,7 +30,7 @@ class EvenementRepository extends ServiceEntityRepository
         }
     }
 
-    public function remove(Evenement $entity, bool $flush = false): void
+    public function remove(Etudiant $entity, bool $flush = false): void
     {
         $this->getEntityManager()->remove($entity);
 
@@ -40,7 +40,7 @@ class EvenementRepository extends ServiceEntityRepository
     }
 
 //    /**
-//     * @return Evenement[] Returns an array of Evenement objects
+//     * @return Etudiant[] Returns an array of Etudiant objects
 //     */
 //    public function findByExampleField($value): array
 //    {
@@ -54,7 +54,7 @@ class EvenementRepository extends ServiceEntityRepository
 //        ;
 //    }
 
-//    public function findOneBySomeField($value): ?Evenement
+//    public function findOneBySomeField($value): ?Etudiant
 //    {
 //        return $this->createQueryBuilder('e')
 //            ->andWhere('e.exampleField = :val')

@@ -20,18 +20,14 @@ class User
     private $id;
 
     /**
-     * @ORM\Column(type="string", length=180, unique=true)
-     * @Assert\Regex("/^[a-zA-Z]+-*$/")
-     * @Assert\NotBlank
+     * @ORM\Column(type="string", length=255)
      */
-    private $nom;
+    private $firstName;
 
     /**
-     * @ORM\Column(type="json")
-     * @Assert\Regex("/^[a-zA-Z]+-*$/")
-     * @Assert\NotBlank
+     * @ORM\Column(type="string", length=255)
      */
-    private $prenom;
+    private $lastName;
 
     public function getId(): ?int
     {
@@ -60,6 +56,30 @@ class User
     {
 
         $this->prenom = $prenom;
+
+        return $this;
+    }
+
+    public function getFirstName(): ?string
+    {
+        return $this->firstName;
+    }
+
+    public function setFirstName(string $firstName): self
+    {
+        $this->firstName = $firstName;
+
+        return $this;
+    }
+
+    public function getLastName(): ?string
+    {
+        return $this->lastName;
+    }
+
+    public function setLastName(string $lastName): self
+    {
+        $this->lastName = $lastName;
 
         return $this;
     }
