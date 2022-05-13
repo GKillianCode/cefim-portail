@@ -30,8 +30,8 @@ yarn-error.log
 
 .idea/
 
+phpunit.xml.dist
+
 migrations/
 
 composer.lock
-
-package-lock.json
