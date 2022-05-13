@@ -28,11 +28,6 @@ class Promotion
      */
     private $id_filiere;
 
-    /**
-     * @ORM\OneToOne(targetEntity=Etudiant::class, mappedBy="idPromotion", cascade={"persist", "remove"})
-     */
-    private $etudiant;
-
     public function getId(): ?int
     {
         return $this->id;
@@ -58,23 +53,6 @@ class Promotion
     public function setIdFiliere(?Filiere $id_filiere): self
     {
         $this->id_filiere = $id_filiere;
-
-        return $this;
-    }
-
-    public function getEtudiant(): ?Etudiant
-    {
-        return $this->etudiant;
-    }
-
-    public function setEtudiant(Etudiant $etudiant): self
-    {
-        // set the owning side of the relation if necessary
-        if ($etudiant->getIdPromotion() !== $this) {
-            $etudiant->setIdPromotion($this);
-        }
-
-        $this->etudiant = $etudiant;
 
         return $this;
     }
