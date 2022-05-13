@@ -28,11 +28,6 @@ class Promotion
      */
     private $id_filiere;
 
-    /**
-     * @ORM\OneToOne(targetEntity=Etudiant::class, mappedBy="idPromotion", cascade={"persist", "remove"})
-     */
-    private $etudiant;
-
     public function getId(): ?int
     {
         return $this->id;
