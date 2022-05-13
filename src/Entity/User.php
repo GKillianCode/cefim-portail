@@ -20,46 +20,76 @@ class User
     private $id;
 
     /**
-     * @ORM\Column(type="string", length=180, unique=true)
-     * @Assert\Regex("/^[a-zA-Z]+-*$/")
-     * @Assert\NotBlank
+     * @ORM\Column(type="string", length=255)
      */
-    private $nom;
+    private $firstName;
 
     /**
-     * @ORM\Column(type="json")
+     * @ORM\Column(type="string", length=180)
      * @Assert\Regex("/^[a-zA-Z]+-*$/")
      * @Assert\NotBlank
      */
-    private $prenom;
+    private $lastName;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $email;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $password;
 
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    public function getNom(): ?string
+    public function getFirstName(): ?string
     {
-        return $this->nom;
+        return $this->firstName;
     }
 
-    public function setNom(string $nom): self
+    public function setFirstName(string $firstName): self
     {
-
-        $this->nom = $nom;
+        $this->firstName = $firstName;
 
         return $this;
     }
 
-    public function getPrenom(): ?string
+    public function getLastName(): ?string
     {
-        return $this->prenom;
+        return $this->lastName;
     }
 
-    public function setPrenom(string $prenom): self
+    public function setLastName(string $lastName): self
     {
+        $this->lastName = $lastName;
 
-        $this->prenom = $prenom;
+        return $this;
+    }
+
+    public function getEmail(): ?string
+    {
+        return $this->email;
+    }
+
+    public function setEmail(string $email): self
+    {
+        $this->email = $email;
+
+        return $this;
+    }
+
+    public function getPassword(): ?string
+    {
+        return $this->password;
+    }
+
+    public function setPassword(string $password): self
+    {
+        $this->password = $password;
 
         return $this;
     }
