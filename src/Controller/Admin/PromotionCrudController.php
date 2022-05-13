@@ -22,7 +22,7 @@ class PromotionCrudController extends AbstractCrudController
     {
         return [
             TextField::new('nom'),
-            AssociationField::new('id_filiere'),
+            AssociationField::new('id_filiere')
         ];
     }
 
