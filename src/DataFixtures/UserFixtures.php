@@ -16,8 +16,8 @@ class UserFixtures extends Fixture
         for ($p = 0, $pMax = 25; $p < $pMax; $p++) {
             $user = new User();
 
-            $user->setNom($faker->name())
-                ->setPrenom($faker->firstName());
+            $user->setlastName($faker->name())
+                ->setfirstName($faker->firstName());
 
             $manager->persist($user);
         }
