@@ -61,21 +61,4 @@ class Promotion
 
         return $this;
     }
-
-    public function getEtudiant(): ?Etudiant
-    {
-        return $this->etudiant;
-    }
-
-    public function setEtudiant(Etudiant $etudiant): self
-    {
-        // set the owning side of the relation if necessary
-        if ($etudiant->getIdPromotion() !== $this) {
-            $etudiant->setIdPromotion($this);
-        }
-
-        $this->etudiant = $etudiant;
-
-        return $this;
-    }
 }
